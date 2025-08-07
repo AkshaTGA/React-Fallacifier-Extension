@@ -9,6 +9,11 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+app.get("/activate",(req,res)=>{
+  res.send("The server is Now active!")
+})
+
 app.post("/claim", async (req, res) => {
   const input = req.body;
   const claim = input.claim;
@@ -52,3 +57,4 @@ const makeprompt = (data, claim) => {
 
   return str;
 };
+
